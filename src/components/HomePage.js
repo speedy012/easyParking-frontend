@@ -10,30 +10,28 @@ class HomePage extends React.Component {
   userLocation = () => {
     console.log("in")
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
-      // this.setState({
-      //   userLat: position.coords.latitude.toString(),
-      //   userLong: position.coords.longitude.toString()
-      // }, ()=> {
-      //   return (
-      //     fetch("http://localhost:3000/currentlocation", {
-      //       method: "POST",
-      //       headers: {
-      //         "Content-Type": "application/json"
-      //       },
-      //       body: JSON.stringify({
-      //         user_id: this.props.user.id,
-      //         latitude: this.state.userLat,
-      //         longitude: this.state.userLong
-      //       })
-      //     })
-      //     .then(res => res.json())
-      //     .then(console.log)
-      //   )
+      console.log("before", typeof(position.coords.latitude))
+      this.setState({
+        userLat: position.coords.latitude.toString(),
+        userLong: position.coords.longitude.toString()
+      }, () => {
+        return (
+           fetch("http://localhost:3000/currentlocation", {
+             method: "POST",
+             headers: {
+               "Content-Type": "application/json"
+             },
+             body: JSON.stringify({
+               user_id: this.props.user.id,
+               latitude: this.state.userLat,
+               longitude: this.state.userLong
+             })
+           })
+           .then(res => res.json())
+           .then(console.log)
+        )
       })
-    // })
-
-
+    })
   }
 
 
