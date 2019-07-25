@@ -31,8 +31,11 @@ class LoginPage extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
+        console.log("inlogin:",this.state)
         localStorage.setItem('token', data.token)
         this.props.history.push("/")
+        //set user state
+        this.props.userState(this.state)
       })
   }
 

@@ -3,15 +3,25 @@ import LoginPage from './components/LoginPage.js'
 import SignUpPage from './components/SignUpPage.js'
 import HomePage from './components/HomePage.js'
 import NavBar from "./components/NavBar.js"
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import './App.css';
 
 class App extends React.Component{
 
   state= {
-    user: {}
+    user: null
   }
+
+  logout = () => {
+    this.setState({user: null})
+    localStorage.removeItem("token")
+    return <Redirect to="/" />
+ }
+
+ userState = (data) => {
+   this.setState({ user: data})
+ }
 
   // check if user is login (if there is a token)
   //get me user info
@@ -29,12 +39,15 @@ class App extends React.Component{
   }
 
   render() {
-    console.log(this.state.user)
+    console.log("in app",this.state.user)
     return(
       <div>
-        <NavBar user={this.state.user}/>
+        <NavBar user={this.state.user} logout={this.logout}/>
         <Switch>
-          <Route exact path="/login" component={LoginPage}/>
+          <Route exact path="/login" render={(props) => {
+            return <LoginPage userState={this.userState} {...props}/>}}
+            />
+
           <Route exact path="/signup" component={SignUpPage}/>
           <Route exact path="/" render={(routerProps) => {
             return <HomePage user={this.state.user}/>
