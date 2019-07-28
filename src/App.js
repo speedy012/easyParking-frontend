@@ -4,8 +4,9 @@ import SignUpPage from './components/SignUpPage.js'
 import HomePage from './components/HomePage.js'
 import NavBar from "./components/NavBar.js"
 import { Switch, Route, Redirect } from 'react-router-dom'
-
 import './App.css';
+import logo from './logo.svg'
+console.log(logo)
 
 class App extends React.Component{
 
