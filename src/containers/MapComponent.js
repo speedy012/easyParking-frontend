@@ -4,6 +4,8 @@ import L from 'leaflet'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 // import newRedMarker from './newRedMarker.svg'
 
+
+//added note
 // console.log(redMarker)
 const API_KEY = process.env.REACT_APP_MB_KEY
 console.log(process.env.REACT_APP_MB_KEY)
