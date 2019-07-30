@@ -1,24 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "materialize-css/dist/css/materialize.min.css"
+
 
 class NavBar extends React.Component {
 
+
   render(){
+    let title = require('../title.png')
     return(
+
+
       <div>
       {this.props.user ?
-        <div>
+        <div className="nav-wrapper">
           <h4> Easy Parking</h4>
-          <Link to="/">Home</Link>&nbsp;
+        <ul  class="right hide-on-med-and-down">
+          <li><Link className="black-text" to="/">Home</Link>&nbsp;</li>
           {/* <Link to="/login">Login</Link>&nbsp;*/}
-          <button onClick={this.props.logout}> Log out </button>
+          <li> <button className="waves-effect waves-light btn-small"onClick={this.props.logout}> Log out </button></li>
+        </ul>
         </div>
         :
-        <div>
-            <h4> Easy Parking</h4>
-            <Link to="/">Home</Link>&nbsp;
-            <Link to="/login">Login</Link>&nbsp;
-            <Link to="/signup">Sign up</Link>&nbsp;
+        <div className="nav-wrapper">
+          <div  className="title" >
+            <img src={title} alt="title"/>
+            <Link className="black-text" to="/">Home</Link>&nbsp;
+            <Link className="black-text" to="/login">Login</Link>&nbsp;
+            <Link className="black-text" to="/signup">Sign up</Link>&nbsp;
+          </div>
         </div>
       }
       </div>

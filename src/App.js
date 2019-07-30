@@ -5,8 +5,7 @@ import HomePage from './components/HomePage.js'
 import NavBar from "./components/NavBar.js"
 import { Switch, Route, Redirect } from 'react-router-dom'
 import './App.css';
-import logo from './logo.svg'
-console.log(logo)
+import 'materialize-css/dist/css/materialize.min.css'
 
 class App extends React.Component{
 
@@ -18,7 +17,7 @@ class App extends React.Component{
     this.setState({user: null})
     localStorage.removeItem("token")
     return <Redirect to="/" />
- }
+  }
 
  userState = (data) => {
    this.setState({ user: data})
@@ -50,7 +49,7 @@ class App extends React.Component{
             />
 
           <Route exact path="/signup" component={SignUpPage}/>
-          <Route exact path="/" render={(routerProps) => {
+          <Route exact path="/" render={(props) => {
             return <HomePage user={this.state.user}/>
             }}
             />
