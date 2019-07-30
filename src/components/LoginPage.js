@@ -31,11 +31,11 @@ class LoginPage extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        console.log("inlogin:",this.state)
+        console.log("inlogin:", data)
         localStorage.setItem('token', data.token)
         this.props.history.push("/")
         //set user state
-        this.props.userState(this.state)
+        this.props.userState(data.user)
       })
   }
 
@@ -43,9 +43,9 @@ class LoginPage extends React.Component {
     console.log(this.state)
     return (
       <form onSubmit={this.handleLogin}>
-        <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/> <br/>
-        <input onChange={this.handleChange} type="text" name="email" placeholder="Email"/> <br/>
-        <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/> <br/>
+        <input onChange={this.handleChange} className="black-text"type="text" name="username" placeholder="Username"/> <br/>
+        <input onChange={this.handleChange} className="black-text"type="text" name="email" placeholder="Email"/> <br/>
+        <input onChange={this.handleChange} type="password" name="password" placeholder="Password" /> <br/>
         <input type="submit" value="Log In"/>
       </form>
     )
