@@ -1,42 +1,99 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "materialize-css/dist/css/materialize.min.css"
+import M from "materialize-css/dist/js/materialize.min.js";
 
 
 class NavBar extends React.Component {
+  componentDidMount() {
+    var elem = document.querySelector(".sidenav");
+     this.instance = M.Sidenav.init(elem, {
+        edge: "left",
+        inDuration: 250
+    });
+  }
 
+  closeNav = () => {
+    this.instance.close()
+  }
 
   render(){
-    let title = require('../title.png')
+    let title = require('../logo_image.png')
     return(
 
 
       <div>
       {this.props.user ?
-        <div className="nav-wrapper">
-          <h4> Easy Parking</h4>
-        <ul  class="right hide-on-med-and-down">
-          <li><Link className="black-text" to="/">Home</Link>&nbsp;</li>
-          {/* <Link to="/login">Login</Link>&nbsp;*/}
-          <li> <button className="waves-effect waves-light btn-small"onClick={this.props.logout}> Log out </button></li>
-        </ul>
-        </div>
+        <div>
+          <img className="actual-image"src={title} alt="title"/>
+          <ul id="slide-out" className="sidenav">
+            <li />
+            <li>
+                <Link onClick={this.closeNav} to="/" className="white-text"><h6>Home</h6></Link>
+            </li>
+            <li>
+                <div className="divider" />
+            </li>
+            <li onClick={this.closeNav}>
+                <Link onClick={this.props.logout} to="/" className="white-text"><h6>Log Out</h6></Link>
+            </li>
+            <li>
+                <div className="divider grey lighten-1" />
+            </li>
+          </ul>
+                <a href="#" data-target="slide-out" className="sidenav-trigger">
+                    <i className="material-icons">menu</i>
+                </a>
+            </div>
         :
-        <div className="nav-wrapper">
-          <div  className="title" >
-            <img src={title} alt="title"/>
-            <Link className="black-text" to="/">Home</Link>&nbsp;
-            <Link className="black-text" to="/login">Login</Link>&nbsp;
-            <Link className="black-text" to="/signup">Sign up</Link>&nbsp;
-          </div>
-        </div>
+        <div>
+          <img className="actual-image" src={title} alt="title"/>
+            <ul id="slide-out" className="sidenav">
+              <li />
+              <li>
+                  <Link onClick={this.closeNav} to="/" className="white-text"><h6>Home</h6></Link>
+              </li>
+              <li>
+                  <div className="divider grey lighten-1" />
+              </li>
+              <li>
+                  <Link onClick={this.closeNav} to="/login" className="white-text"><h6>Login</h6></Link>
+              </li>
+              <li>
+                  <div className="divider grey lighten-1" />
+              </li>
+              <li>
+                  <Link onClick={this.closeNav} to="/signup" className="white-text"><h6>Sign Up</h6></Link>
+              </li>
+              <li>
+                  <div className="divider grey lighten-1" />
+              </li>
+            </ul>
+            <Link to="#" data-target="slide-out" className="sidenav-trigger" value="menu">
+                <i className="material-icons">menu</i>
+            </Link>
+            </div>
       }
       </div>
     )
   }
 }
 
+
+
+
 export default NavBar
+
+
+// <div className="nav-wrapper">
+//   <img className="actual-image" src={title} alt="title"/>
+//   <Link className="white-text" to="/">Home</Link>&nbsp;<br/>
+//   <Link className="white-text" to="/login">Login</Link>&nbsp;<br/>
+//   <Link className="white-text" to="/signup">Sign up</Link>&nbsp;
+// </div>
+
+
+
 
 // state = {
 //   isLogin: false
