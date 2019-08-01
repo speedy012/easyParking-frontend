@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
+
 const API_KEY = process.env.REACT_APP_MB_KEY
 
 var myIcon = L.icon({
@@ -216,12 +217,14 @@ class MapComponent extends React.Component {
 
 
     return(
-      <div>
-        <button onClick={this.userLocation}>Get Location</button>
+      <div className="map-container">
+        <div className="inner-map-container">
+          <button className="location-btn"  onClick={this.userLocation}>Get Location</button>
+
         <Map onClick={this.addMarkers} className="map" center={position} zoom={this.state.zoom}>
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            // url="https://api.mapbox.com/styles/v1/rustyraptor/cjkbednp4buod2rnwog2xrdtb/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibm9vbmUwMTIiLCJhIjoiY2p5a202OTZmMGZ4MzNkcGtzdDRraXBvYSJ9.2xL9Hgg64Jwvo1eirhacFQ"
+
             url={`https://api.mapbox.com/styles/v1/rustyraptor/cjkbednp4buod2rnwog2xrdtb/tiles/256/{z}/{x}/{y}?access_token=${API_KEY}`}
 
           />
@@ -238,6 +241,7 @@ class MapComponent extends React.Component {
           null
           }
         </Map>
+        </div>
       </div>
     )
   }

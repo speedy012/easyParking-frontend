@@ -34,13 +34,105 @@
 
 
 .map {
-  height: 500px
+  height: 500px;
+  border-style: solid;
+  border-width: 4px;
+  z-index: 7;
 }
 
-.title{
+.actual-image{
+  position: absolute;
   text-align: center;
-  /* display: table-cell;
-  vertical-align: middle; */
-  /* width: 500px;
-  height: auto; */
+  width: 20%;
+  height: auto;
+  left: 40%;
+
+}
+
+#nav {
+  width: 5px;
+  height: 5px;
+}
+
+.open {
+  height: 100%;
+  width: 20%;
+  left: 0%;
+  top: 0%;
+  position: fixed;
+}
+
+
+
+.sidenav {
+  background-color: black;
+  font-family: 'Crimson Text';
+  font-weight: bolder;
+  font-size: medium;
+  width: 17%;
+  z-index: 999;
+}
+
+#autocomplete-Input {
+  color: white;
+}
+
+.material-icons {
+  font-size: 3rem;
+  color: white;
+}
+
+.login-form {
+  border: solid;
+  justify-content: center;
+  position: absolute;
+  top: 375%;
+  width: 35%;
+  right: 32.5%;
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px #bdbdbd;
+}
+
+.login-btn{
+  position: absolute;
+  top: 85%;
+  left: 45%;
+}
+
+.signup-form {
+  border: solid;
+  justify-content: center;
+  position: absolute;
+  top: 375%;
+  width: 35%;
+  right: 32.5%;
+  background-color: black;
+  border-radius: 5px;
+
+}
+
+.signup-btn{
+  position: absolute;
+  top: 85%;
+  left: 45%;
+}
+
+.location-btn {
+  position: relative;
+
+  left: 92%;
+
+}
+
+.inner-map-container {
+    /* border: solid; */
+}
+
+.map-container {
+  overflow: hidden;
+  position: absolute;
+  /* border: solid; */
+  top: 300%;
+  width: 100%
 }

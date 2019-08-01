@@ -40,15 +40,48 @@ class SignUpPage extends React.Component {
   render(){
     console.log(this.state)
     return (
-      <form onSubmit={this.handleSignUp}>
-        <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/> <br/>
-        <input onChange={this.handleChange} type="text" name="email" placeholder="Email"/> <br/>
-        <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/> <br/>
-        <input type="submit" value="Sign Up"/>
-      </form>
+      <div className="signup-form">
+        <form onSubmit={this.handleLogin}>
+          <div class="row">
+             <div class="col s12">
+               <div class="row">
+                 <div class="input-field col s12">
+                   <i class="material-icons prefix">account_circle</i>
+                   <input onChange={this.handleChange} name="username" type="text" id="autocomplete-input" placeholder="Username" className="autocomplete white-text" />
+                   {/*}<label for="username-input">Username</label>*/}
+                 </div>
+                 <div class="input-field col s12">
+                   <i class="material-icons prefix">email</i>
+                   <input onChange={this.handleChange} name="email" type="text" id="autocomplete-input" placeholder="Email" className="autocomplete white-text" />
+                 </div>
+                 <div class="input-field col s12">
+                   <i class="material-icons prefix">https</i>
+                   <input onChange={this.handleChange} name="password" type="text" id="autocomplete-input" placeholder="Password" className="autocomplete white-text" />
+                 </div>
+                 < div className="signup-btn">
+                   <input type="submit" value="Sign Up"/>
+                 </div>
+               </div>
+             </div>
+           </div>
+        </form>
+      </div>
     )
   }
 
 }
 
 export default SignUpPage
+
+// // {/*<form onSubmit={this.handleSignUp}>
+//   <input onChange={this.handleChange} className="white-text" type="text" name="username" placeholder="Username"/> <br/>
+//   <input onChange={this.handleChange} className="white-text" type="text" name="email" placeholder="Email"/> <br/>
+//   <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/> <br/>
+//   {/* <input type="submit" value="Sign Up"/>*/}
+//   // <button class="btn waves-effect waves-light" type="submit" name="action"> Sign Up
+//   //   <i class="material-icons right">send</i>
+//   // </button>
+//
+//
+//
+//</form>*/}//
