@@ -15,7 +15,7 @@
 
 ## Demo
 <p align="center"> 
-  <img  src="https://github.com/speedy012/easyParking-frontend/blob/master/src/logo_image.png" height="350" width="350">
+  <img  src="https://github.com/speedy012/easyParking-frontend/blob/master/src/screen%20shot.png" height="350" width="350">
 </p>
 Video
 
