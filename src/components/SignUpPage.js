@@ -41,25 +41,25 @@ class SignUpPage extends React.Component {
     console.log(this.state)
     return (
       <div className="signup-form">
-        <form onSubmit={this.handleLogin}>
-          <div class="row">
-             <div class="col s12">
-               <div class="row">
-                 <div class="input-field col s12">
-                   <i class="material-icons prefix">account_circle</i>
+        <form onSubmit={this.handleSignUp}>
+          <div className="row">
+             <div className="col s12">
+               <div className="row">
+                 <div className="input-field col s12">
+                   <i className="material-icons prefix">account_circle</i>
                    <input onChange={this.handleChange} name="username" type="text" id="autocomplete-input" placeholder="Username" className="autocomplete white-text" />
                    {/*}<label for="username-input">Username</label>*/}
                  </div>
-                 <div class="input-field col s12">
-                   <i class="material-icons prefix">email</i>
+                 <div className="input-field col s12">
+                   <i className="material-icons prefix">email</i>
                    <input onChange={this.handleChange} name="email" type="text" id="autocomplete-input" placeholder="Email" className="autocomplete white-text" />
                  </div>
-                 <div class="input-field col s12">
-                   <i class="material-icons prefix">https</i>
+                 <div className="input-field col s12">
+                   <i className="material-icons prefix">https</i>
                    <input onChange={this.handleChange} name="password" type="text" id="autocomplete-input" placeholder="Password" className="autocomplete white-text" />
                  </div>
                  < div className="signup-btn">
-                   <input type="submit" value="Sign Up"/>
+                   <input className="inside-signup-btn" type="submit" value="Sign Up"/>
                  </div>
                </div>
              </div>

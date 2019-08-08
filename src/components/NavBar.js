@@ -41,7 +41,7 @@ class NavBar extends React.Component {
                 <div className="divider grey lighten-1" />
             </li>
           </ul>
-                <a href="#" data-target="slide-out" className="sidenav-trigger">
+                <a href="#" data-target="slide-out" className="sidenav-trigger" value="slide">
                     <i className="material-icons">menu</i>
                 </a>
             </div>
@@ -50,24 +50,30 @@ class NavBar extends React.Component {
           <img className="actual-image" src={title} alt="title"/>
             <ul id="slide-out" className="sidenav">
               <li />
-              <li>
-                  <Link onClick={this.closeNav} to="/" className="white-text"><h6>Home</h6></Link>
+              <div className="home">
+              <li className="sub-home">
+                  <Link onClick={this.closeNav} to="/" className="white-text"><h6 className="home-title">Home</h6></Link>
               </li>
               <li>
                   <div className="divider grey lighten-1" />
               </li>
-              <li>
-                  <Link onClick={this.closeNav} to="/login" className="white-text"><h6>Login</h6></Link>
+              </div>
+              <div className="login">
+              <li className="sub-login">
+                  <Link onClick={this.closeNav} to="/login" className="white-text"><h6 className="login-title">Login</h6></Link>
               </li>
               <li>
                   <div className="divider grey lighten-1" />
               </li>
-              <li>
-                  <Link onClick={this.closeNav} to="/signup" className="white-text"><h6>Sign Up</h6></Link>
+              </div>
+              <div className="signup">
+              <li className="sub-signup">
+                  <Link onClick={this.closeNav} to="/signup" className="white-text"><h6 className="signup-title">Sign Up</h6></Link>
               </li>
               <li>
                   <div className="divider grey lighten-1" />
               </li>
+              </div>
             </ul>
             <Link to="#" data-target="slide-out" className="sidenav-trigger" value="menu">
                 <i className="material-icons">menu</i>

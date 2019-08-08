@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 /* .App-logo {
@@ -100,6 +101,19 @@
   left: 45%;
 }
 
+.inside-login-btn {
+  position: absolute;
+  background: black;
+  color: white;
+  border-radius: 5px;
+}
+.inside-signup-btn {
+  position: absolute;
+  background: black;
+  color: white;
+  border-radius: 5px;
+}
+
 .signup-form {
   border: solid;
   justify-content: center;
@@ -109,7 +123,7 @@
   right: 32.5%;
   background-color: black;
   border-radius: 5px;
-
+  box-shadow: 2px 2px 6px #bdbdbd;
 }
 
 .signup-btn{
@@ -118,21 +132,66 @@
   left: 45%;
 }
 
-.location-btn {
-  position: relative;
+.location-btn{
+  position: absolute;
+  display: inline-block;
+  z-index: 999;
+  left: 91.2%;
+  background: black!important;
+  border: solid,black;
+  border-radius: 5px;
 
-  left: 92%;
-
-}
-
-.inner-map-container {
-    /* border: solid; */
 }
 
 .map-container {
   overflow: hidden;
   position: absolute;
   /* border: solid; */
-  top: 300%;
+  top: 475%;
   width: 100%
+}
+
+.popup {
+  background: black;
+  color: white;
+}
+.popup-btn {
+  background-color: black;
+  color: white;
+  position: relative;
+  left: 25%;
+}
+
+.sub-home {
+  position: relative;
+  top: 10%;
+}
+
+.home-title{
+  position: absolute;
+  top: 20%;
+}
+
+.sub-login {
+  position: relative;
+  top: 10%;
+}
+
+.login-title{
+  position: absolute;
+  top: 20%;
+}
+
+.sub-signup {
+  position: relative;
+  top: 10%;
+}
+
+.signup-title {
+  position: absolute;
+  top: 20%;
+}
+
+.personal {
+  color: white
 }

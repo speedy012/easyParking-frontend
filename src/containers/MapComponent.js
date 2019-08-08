@@ -195,8 +195,8 @@ class MapComponent extends React.Component {
         return (
           <Marker onDragend={(e) =>this.updateMarker(e, spot)} position={list} icon={myIcon} key={spot.id}  draggable={this.state.draggable}>
             <Popup>
-              <span onClick={this.toggleDraggable} >
-                Open Parking Space <br /> <button onClick={()=>this.removeMarker(spot)}>Claim</button>
+              <span className="popup" onClick={this.toggleDraggable} >
+                Open Parking Space <br /> <button className="popup-btn" onClick={()=>this.removeMarker(spot)}>Claim</button>
               </span>
             </Popup>
           </Marker>
@@ -206,8 +206,8 @@ class MapComponent extends React.Component {
           return (
             <Marker onDragend={(e) =>this.updateMarker(e, spot)} position={list} icon={myIcon} key={spot.id}  >
               <Popup>
-                <span onClick={this.toggleDraggable} >
-                  Open Parking Space <br /> <button onClick={()=>this.removeMarker(spot)}>Claim</button>
+                <span className='popup' onClick={this.toggleDraggable} >
+                  Open Parking Space <br /> <button className="popup-btn" onClick={()=>this.removeMarker(spot)}>Claim</button>
                 </span>
               </Popup>
             </Marker>
@@ -219,7 +219,7 @@ class MapComponent extends React.Component {
     return(
       <div className="map-container">
         <div className="inner-map-container">
-          <button className="location-btn"  onClick={this.userLocation}>Get Location</button>
+          <button className="location-btn white-text"  onClick={this.userLocation}>Get Location</button>
 
         <Map onClick={this.addMarkers} className="map" center={position} zoom={this.state.zoom}>
           <TileLayer
@@ -231,8 +231,8 @@ class MapComponent extends React.Component {
           {spots}
           {this.state.isCurrentLocation ?
             <Marker  position={position} icon={geo}>
-              <Popup>
-                <span>
+              <Popup className="popup">
+                <span className="personal">
                   My Current Location <br />
                 </span>
               </Popup>

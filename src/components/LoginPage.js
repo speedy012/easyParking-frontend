@@ -64,10 +64,10 @@ class LoginPage extends React.Component {
                </div>
                <div class="input-field col s12">
                  <i class="material-icons prefix">https</i>
-                 <input onChange={this.handleChange} name="password" type="text" id="autocomplete-input" placeholder="Password" className="autocomplete white-text" />
+                 <input onChange={this.handleChange} name="password" type="password" id="autocomplete-input" placeholder="Password" className="autocomplete white-text" />
                </div>
-               < div className="login-btn">
-                 <input type="submit" value="Log In"/>
+               <div className="login-btn">
+                 <input className="inside-login-btn" type="submit" value="Log In"/>
                </div>
              </div>
            </div>
