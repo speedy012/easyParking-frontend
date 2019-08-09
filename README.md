@@ -20,6 +20,13 @@
 </p>
 Video
 
+## Techologies/Frameworks
+- React: Front-end
+- Ruby on Rails: Back-end
+- JSON web tokens for client-side auth
+- Materialize & Custom CSS
+- React Leaflet 
+- Mapbox Tile API
 
 ## Installation
 - Clone down & install the [backend](https://github.com/speedy012/easyParking-backend)
