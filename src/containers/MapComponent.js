@@ -51,7 +51,7 @@ class MapComponent extends React.Component {
       const updatedCoords = e.target.getLatLng()
       console.log(updatedCoords)
 
-      fetch(`http://localhost:3000/update/${pinnedSpot.id}`, {
+      fetch(`https://easy-parking-backend.herokuapp.com/update/${pinnedSpot.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ class MapComponent extends React.Component {
       newLong: e.latlng.lng
     })
 
-    fetch("http://localhost:3000/currentlocation", {
+    fetch("https://easy-parking-backend.herokuapp.com/currentlocation", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

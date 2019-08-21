@@ -28,7 +28,7 @@ class LoginPage extends React.Component {
   handleLogin = (event) => {
     event.preventDefault()
     console.log("state from handleLogin",this.state)
-    fetch("http://localhost:3000/login", {
+    fetch("https://easy-parking-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

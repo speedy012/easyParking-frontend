@@ -20,8 +20,6 @@ class NavBar extends React.Component {
   render(){
     let title = require('../logo_image.png')
     return(
-
-
       <div>
       {this.props.user ?
         <div>
@@ -51,34 +49,34 @@ class NavBar extends React.Component {
             <ul id="slide-out" className="sidenav">
               <li />
               <div className="home">
-              <li className="sub-home">
-                  <Link onClick={this.closeNav} to="/" className="white-text"><h6 className="home-title">Home</h6></Link>
-              </li>
-              <li>
-                  <div className="divider grey lighten-1" />
-              </li>
+                <li className="sub-home">
+                    <Link onClick={this.closeNav} to="/" className="white-text"><h6 className="home-title">Home</h6></Link>
+                </li>
+                <li>
+                    <div className="divider grey lighten-1" />
+                </li>
               </div>
               <div className="login">
-              <li className="sub-login">
-                  <Link onClick={this.closeNav} to="/login" className="white-text"><h6 className="login-title">Login</h6></Link>
-              </li>
-              <li>
-                  <div className="divider grey lighten-1" />
-              </li>
+                <li className="sub-login">
+                    <Link onClick={this.closeNav} to="/login" className="white-text"><h6 className="login-title">Login</h6></Link>
+                </li>
+                <li>
+                    <div className="divider grey lighten-1" />
+                </li>
               </div>
               <div className="signup">
-              <li className="sub-signup">
-                  <Link onClick={this.closeNav} to="/signup" className="white-text"><h6 className="signup-title">Sign Up</h6></Link>
-              </li>
-              <li>
-                  <div className="divider grey lighten-1" />
-              </li>
+                <li className="sub-signup">
+                    <Link onClick={this.closeNav} to="/signup" className="white-text"><h6 className="signup-title">Sign Up</h6></Link>
+                </li>
+                <li>
+                    <div className="divider grey lighten-1" />
+                </li>
               </div>
             </ul>
             <Link to="#" data-target="slide-out" className="sidenav-trigger" value="menu">
                 <i className="material-icons">menu</i>
             </Link>
-            </div>
+          </div>
       }
       </div>
     )

@@ -23,7 +23,7 @@ class SignUpPage extends React.Component {
   handleSignUp= (event) => {
     event.preventDefault()
     console.log("state from handleLogin",this.state)
-    fetch("http://localhost:3000/signup", {
+    fetch("https://easy-parking-backend.herokuapp.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -56,7 +56,7 @@ class SignUpPage extends React.Component {
                  </div>
                  <div className="input-field col s12">
                    <i className="material-icons prefix">https</i>
-                   <input onChange={this.handleChange} name="password" type="text" id="autocomplete-input" placeholder="Password" className="autocomplete white-text" />
+                   <input onChange={this.handleChange} name="password" type="password" id="autocomplete-input" placeholder="Password" className="autocomplete white-text" />
                  </div>
                  < div className="signup-btn">
                    <input className="inside-signup-btn" type="submit" value="Sign Up"/>
