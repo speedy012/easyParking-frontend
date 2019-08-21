@@ -22,7 +22,6 @@ class SignUpPage extends React.Component {
 
   handleSignUp= (event) => {
     event.preventDefault()
-    console.log("state from handleLogin",this.state)
     fetch("https://easy-parking-backend.herokuapp.com/signup", {
       method: "POST",
       headers: {
@@ -38,7 +37,6 @@ class SignUpPage extends React.Component {
   }
 
   render(){
-    console.log(this.state)
     return (
       <div className="signup-form">
         <form onSubmit={this.handleSignUp}>

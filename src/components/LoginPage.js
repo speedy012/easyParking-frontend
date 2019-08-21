@@ -27,7 +27,6 @@ class LoginPage extends React.Component {
 
   handleLogin = (event) => {
     event.preventDefault()
-    console.log("state from handleLogin",this.state)
     fetch("https://easy-parking-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
@@ -37,7 +36,6 @@ class LoginPage extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        console.log("inlogin:", data)
         localStorage.setItem('token', data.token)
         this.props.history.push("/")
         //set user state
@@ -46,7 +44,6 @@ class LoginPage extends React.Component {
   }
 
   render(){
-    console.log(this.state)
     return (
     <div className="login-form">
       <form onSubmit={this.handleLogin}>

@@ -23,8 +23,6 @@ var geo = L.icon({
   // popupAnchor: [0, -30]
 })
 
-
-
 class MapComponent extends React.Component {
 
   state = {
@@ -43,13 +41,8 @@ class MapComponent extends React.Component {
   }
 
   updateMarker = (e, pinnedSpot) => {
-    console.log("user", this.props.user)
-    console.log("pinnedSpot", pinnedSpot)
-
     if (this.props.user.id === pinnedSpot.user_id) {
-      console.log("in updated", pinnedSpot)
       const updatedCoords = e.target.getLatLng()
-      console.log(updatedCoords)
 
       fetch(`https://easy-parking-backend.herokuapp.com/update/${pinnedSpot.id}`, {
         method: "PATCH",
@@ -75,7 +68,7 @@ class MapComponent extends React.Component {
             return oldSpot
           }
         })
-        console.log("newUpdatedSpot", newUpdatedSpot)
+
         this.setState({
           availableParking: [...newUpdatedSpot]
         })
@@ -83,14 +76,10 @@ class MapComponent extends React.Component {
     } else {
       alert("Wrong user")
     }
-
-
   }
 
 
   addMarkers = (e) => {
-    console.log("add marker", e.latlng)
-    console.log("user", this.props.user)
     this.setState({
       newLat: e.latlng.lat,
       newLong: e.latlng.lng
@@ -115,9 +104,7 @@ class MapComponent extends React.Component {
   }
 
   removeMarker = (pkSpot) => {
-    console.log(this.state.availableParking)
     let claimedParkingSpot = this.state.availableParking.filter(pk => pk.id !== pkSpot.id)
-    console.log("variable", claimedParkingSpot)
     this.setState({
       availableParking: claimedParkingSpot
     })
@@ -135,10 +122,7 @@ class MapComponent extends React.Component {
   }
 
   userLocation = () => {
-
-    // console.log("infetch", this.props.user)
     navigator.geolocation.getCurrentPosition(position => {
-      console.log("before", typeof(position.coords.latitude))
       this.setState({
         userLat: position.coords.latitude.toString(),
         userLong: position.coords.longitude.toString(),
@@ -184,12 +168,8 @@ class MapComponent extends React.Component {
     })
   }
   render() {
-    console.log(this.props.user)
     const position = [this.state.userLat, this.state.userLong]
-    // const position = [this.state.newLat, this.state.newLong]
     const spots = this.state.availableParking.map(spot => {
-      // console.log("user:", this.props.user)
-      // console.log("spot:", spot)
       let list = [spot.latitude, spot.longitude]
       if(this.props.user.id === spot.user_id) {
         return (

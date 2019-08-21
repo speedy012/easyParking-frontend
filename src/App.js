@@ -39,7 +39,7 @@ class App extends React.Component{
   }
 
   render() {
-    console.log("in app",this.state.user)
+
     return(
       <div>
         <NavBar user={this.state.user} logout={this.logout}/>
@@ -60,21 +60,3 @@ class App extends React.Component{
 }
 
 export default App;
-
-/*
-<Route exact path="/login" render={routerProps => <LoginPage {...routerProps}/>}/>
-<header className="App-header">
-  <img src={logo} className="App-logo" alt="logo" />
-  <p>
-    Edit <code>src/App.js</code> and save to reload.
-  </p>
-  <a
-    className="App-link"
-    href="https://reactjs.org"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Learn React
-  </a>
-</header>
-  */

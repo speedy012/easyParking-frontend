@@ -7,8 +7,6 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-
-
 ReactDOM.render(
   <BrowserRouter>
     <App />
