@@ -109,7 +109,7 @@ class MapComponent extends React.Component {
       availableParking: claimedParkingSpot
     })
 
-    fetch(`http://localhost:3000/delete/${pkSpot.id}`, {
+    fetch(`https://easy-parking-backend.herokuapp.com/delete/${pkSpot.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ class MapComponent extends React.Component {
         isCurrentLocation: true
       }, () => {
         return (
-           fetch("http://localhost:3000/currentlocation", {
+           fetch("https://easy-parking-backend.herokuapp.com/currentlocation", {
              method: "POST",
              headers: {
                "Content-Type": "application/json"
