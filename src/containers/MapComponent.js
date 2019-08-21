@@ -159,7 +159,7 @@ class MapComponent extends React.Component {
   //   })
 
 
-    fetch("http://localhost:3000//allparkingspots")
+    fetch("https://easy-parking-backend.herokuapp.com/allparkingspots")
       .then(res => res.json())
       .then(list => {
         this.setState({
