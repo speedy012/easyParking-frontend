@@ -15,7 +15,7 @@
 - Once you claim a parking, you can remove marker to let users know, you've taken the spot.
 
 ## Demo
-Video Demo: <a href="https://www.youtube.com/watch?v=kLi46IS6Bc0&t=3s"></a>
+Video Demo: <a href="https://www.youtube.com/watch?v=kLi46IS6Bc0&t=3s">Link</a>
 <p align="center"> 
   <img  src="https://github.com/speedy012/easyParking-frontend/blob/master/src/screen%20shot.png" height="850" width="950">
 </p>
